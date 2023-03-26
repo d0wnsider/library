@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+header {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 80vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-box {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  width: 250px;
+}
+
+footer {
+  height: 10vh;
+}

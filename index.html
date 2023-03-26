@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Library</title>
   </head>
-  <body></body>
+  <body>
+    <header>Library</header>
+    <main>
+      <button class="add">+</button>
+      <form>
+        popup from clicking +
+        <label for="title"
+          >Title
+          <input class="add-card" id="title" type="text" />
+        </label>
+        <label for="author"
+          >Author
+          <input class="add-card" id="author" type="text" />
+        </label>
+        <label for="pages"
+          >Pages
+          <input class="add-card" id="pages" type="text" />
+        </label>
+        <label for="read"
+          >Read
+          <input class="add-card" id="read" type="text" />
+        </label>
+        <button type="submit">Add Book</button>
+      </form>
+
+      <div class="modal-box">
+        <div class="modal">
+          <div class="card">Title <span>text</span></div>
+          <div class="card">Author <span>text</span></div>
+          <div class="card">Pages <span>text</span></div>
+          <div class="card">Read <span>text</span></div>
+          <button class="remove">X</button>
+        </div>
+      </div>
+    </main>
+    <footer>Github Logo Downsider</footer>
+  </body>
 </html>
