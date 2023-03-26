@@ -19,6 +19,14 @@ header {
 main {
   height: 80vh;
 }
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add button {
+  padding: 20px;
+}
 form {
   display: flex;
   flex-direction: column;
