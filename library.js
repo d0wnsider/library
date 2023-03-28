@@ -16,13 +16,6 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  // const book1 = new Book("Can't Hurt Me", 'David Goggins', '300', 'Yes');
-  // const book2 = new Book('Atomic Habits', 'James Clear', '250', 'Yes');
-  // const book3 = new Book('Meditations', 'Marcus Aurelius', '350', 'Yes');
-  // library.push(book1, book2, book3);
-}
-
-function display() {
   library.forEach((book) => {
     const card = document.createElement('div');
     card.classList = 'card';
@@ -47,13 +40,14 @@ function display() {
 }
 
 function submitForm(e) {
+  library.splice(0, library.length); // deleting current objects before updating
   const titleValue = userTitle.value;
   const authorValue = userAuthor.value;
   const pagesValue = userPages.value;
   const readValue = userRead.value;
   const book = new Book(titleValue, authorValue, pagesValue, readValue);
   library.push(book);
-  display();
+  addBookToLibrary();
   form.style.display = 'none';
   e.preventDefault();
 }
@@ -64,5 +58,6 @@ addButton.addEventListener('click', function (e) {
 
 submit.addEventListener('click', submitForm, false);
 
+const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes');
+library.push(book);
 addBookToLibrary();
-display();
