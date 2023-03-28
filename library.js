@@ -8,17 +8,20 @@ const userPages = document.querySelector('#pages');
 const userRead = document.querySelector('#read');
 const library = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, index) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.index = index;
 }
 
 function addBookToLibrary() {
   library.forEach((book) => {
     const card = document.createElement('div');
     card.classList = 'card';
+    card.setAttribute('data-index', book.index + 1);
+
     const title = document.createElement('p');
     title.textContent = `Title: ${book.title}`;
 
@@ -31,16 +34,28 @@ function addBookToLibrary() {
     const read = document.createElement('p');
     read.textContent = `Read: ${book.read}`;
 
+    const remove = document.createElement('button');
+    remove.classList = 'remove';
+    remove.textContent = 'X';
+
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(read);
+    card.appendChild(remove);
     cardContainer.appendChild(card);
+  });
+}
+// how to remove current display before updating to the latest display?
+function removeDisplay() {
+  library.forEach((book) => {
+    const card = document.querySelector('.card');
+    card.remove();
   });
 }
 
 function submitForm(e) {
-  library.splice(0, library.length); // deleting current objects before updating
+  removeDisplay();
   const titleValue = userTitle.value;
   const authorValue = userAuthor.value;
   const pagesValue = userPages.value;
@@ -58,6 +73,11 @@ addButton.addEventListener('click', function (e) {
 
 submit.addEventListener('click', submitForm, false);
 
-const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes');
+// remove.addEventListener('click', () => {
+//   // how to choose specific object when deleting?
+//   if (book) library.splice(0, library);
+// });
+
+const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes', 1);
 library.push(book);
 addBookToLibrary();
