@@ -20,29 +20,47 @@
           <li>
             <label for="title"
               >Title
-              <input class="add-card" id="title" type="text" />
+              <input
+                class="add-card"
+                id="title"
+                type="text"
+                value=""
+                required
+              />
             </label>
           </li>
           <li>
             <label for="author"
               >Author
-              <input class="add-card" id="author" type="text" />
+              <input class="add-card" id="author" type="text" required />
             </label>
           </li>
           <li>
             <label for="pages"
               >Pages
-              <input class="add-card" id="pages" type="text" />
+              <input class="add-card" id="pages" type="text" required />
             </label>
           </li>
           <li>
             <label for="read"
               >Read
-              <input class="add-card" id="read" type="radio" name="read" />Yes
-              <input class="add-card" id="read" type="radio" name="read" />No
+              <input
+                class="add-card"
+                id="read"
+                type="radio"
+                name="read"
+                required
+              />Yes
+              <input
+                class="add-card"
+                id="read"
+                type="radio"
+                name="read"
+                required
+              />No
             </label>
           </li>
-          <li><button type="submit">Add Book</button></li>
+          <li><button class="submit" type="submit">Add Book</button></li>
         </ul>
       </form>
     </main>
