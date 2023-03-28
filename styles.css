@@ -19,17 +19,17 @@ header {
 main {
   height: 80vh;
 }
-.add {
+.add-box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.add button {
+.add-button {
   padding: 20px;
 }
 form {
-  display: flex;
-  flex-direction: column;
+  display: none;
+  position: absolute;
 }
 .card-container {
   padding: 10px;

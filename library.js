@@ -1,4 +1,6 @@
 const cardContainer = document.querySelector('.card-container');
+const form = document.querySelector('.form');
+const addButton = document.querySelector('.add-button');
 
 const library = [];
 
@@ -9,7 +11,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-function addBook() {
+function addBookToLibrary() {
   const book1 = new Book("Can't Hurt Me", 'David Goggins', '300', 'Yes');
   const book2 = new Book('Atomic Habits', 'James Clear', '250', 'Yes');
   const book3 = new Book('Meditations', 'Marcus Aurelius', '350', 'Yes');
@@ -40,5 +42,9 @@ function display() {
   });
 }
 
-addBook();
+addButton.addEventListener('click', function (e) {
+  form.style.display = 'block';
+});
+
+addBookToLibrary();
 display();
