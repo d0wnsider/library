@@ -25,9 +25,10 @@ function displayLibrary() {
   const cardContainer = document.querySelector('.card-container');
   cardContainer.textContent = ``;
 
-  library.forEach((book) => {
+  library.forEach((book, index) => {
     const card = document.createElement('div');
     card.classList = 'card';
+    card.setAttribute('data-index', index);
 
     const title = document.createElement('p');
     title.textContent = `Title: ${book.title}`;
@@ -45,7 +46,9 @@ function displayLibrary() {
     rem.classList = 'remove-button';
     rem.textContent = `X`;
     rem.addEventListener('click', (e) => {
-      console.log('1');
+      const parent = e.target.parentNode;
+      parent.remove(parent);
+      library.splice(index, 1);
     });
 
     card.appendChild(title);
