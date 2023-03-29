@@ -6,6 +6,7 @@ const userTitle = document.querySelector('#title');
 const userAuthor = document.querySelector('#author');
 const userPages = document.querySelector('#pages');
 const userRead = document.querySelector('#read');
+const remButton = document.querySelector('.remove-button');
 const library = [];
 
 function Book(title, author, pages, read, index) {
@@ -20,7 +21,6 @@ function addBookToLibrary() {
   library.forEach((book) => {
     const card = document.createElement('div');
     card.classList = 'card';
-    card.setAttribute('data-index', book.index + 1);
 
     const title = document.createElement('p');
     title.textContent = `Title: ${book.title}`;
@@ -34,15 +34,16 @@ function addBookToLibrary() {
     const read = document.createElement('p');
     read.textContent = `Read: ${book.read}`;
 
-    const remove = document.createElement('button');
-    remove.classList = 'remove';
-    remove.textContent = 'X';
+    const rem = document.createElement('button');
+    rem.classList = 'remove-button';
+    rem.setAttribute('type', 'button');
+    rem.textContent = 'X';
 
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(read);
-    card.appendChild(remove);
+    card.appendChild(rem);
     cardContainer.appendChild(card);
   });
 }
@@ -54,7 +55,12 @@ function removeDisplay() {
   });
 }
 
-function submitForm(e) {
+addButton.addEventListener('click', function (e) {
+  form.style.display = 'block';
+});
+
+submit.addEventListener('click', function (e) {
+  e.preventDefault();
   removeDisplay();
   const titleValue = userTitle.value;
   const authorValue = userAuthor.value;
@@ -64,20 +70,12 @@ function submitForm(e) {
   library.push(book);
   addBookToLibrary();
   form.style.display = 'none';
-  e.preventDefault();
-}
-
-addButton.addEventListener('click', function (e) {
-  form.style.display = 'block';
 });
 
-submit.addEventListener('click', submitForm, false);
+remButton.addEventListener('click', () => {
+  // how to choose specific object when deleting?
+  console.log('1');
+});
 
-// remove.addEventListener('click', () => {
-//   // how to choose specific object when deleting?
-//   if (book) library.splice(0, library);
-// });
-
-const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes', 1);
-library.push(book);
-addBookToLibrary();
+// const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes', 1);
+// library.push(book);
