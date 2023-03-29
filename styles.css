@@ -31,6 +31,9 @@ form {
   display: none;
   position: absolute;
 }
+.submit {
+  padding: 20px;
+}
 .card-container {
   padding: 10px;
   margin: 10px;

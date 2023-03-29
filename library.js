@@ -9,12 +9,11 @@ const userRead = document.querySelector('#read');
 const remButton = document.querySelector('.remove-button');
 const library = [];
 
-function Book(title, author, pages, read, index) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.index = index;
 }
 
 function addBookToLibrary() {
@@ -59,7 +58,7 @@ addButton.addEventListener('click', function (e) {
   form.style.display = 'block';
 });
 
-submit.addEventListener('click', function (e) {
+submit.addEventListener('click', e => {
   e.preventDefault();
   removeDisplay();
   const titleValue = userTitle.value;
@@ -72,10 +71,11 @@ submit.addEventListener('click', function (e) {
   form.style.display = 'none';
 });
 
-remButton.addEventListener('click', () => {
+// try make a function that loops and ands eventlistener to all buttons everytime it is invoke
+if(remButton) { // gives error because there is no button in html in first load I think
+  remButton.addEventListener('click', function (e) {
   // how to choose specific object when deleting?
   console.log('1');
 });
-
-// const book = new Book('Meditations', 'Marcus Aurelius', '500', 'Yes', 1);
-// library.push(book);
+}
+// addBookToLibrary();
