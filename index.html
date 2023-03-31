@@ -9,15 +9,10 @@
     <script src="library.js" defer></script>
   </head>
   <body>
-    <header><h1>Library</h1></header>
-    <main>
-      <div class="add-box"><button class="add-button">+</button></div>
-      <div class="card-container">
-        </div>
-      </div>
-
-      <form class="form">
-        form popup from clicking +
+    <header>
+      <h1>Library</h1>
+    <form class="form">
+        <p class="bold">Add new book</p>
         <ul>
           <li>
             <label for="title"
@@ -39,7 +34,7 @@
           <li>
             <label for="pages"
               >Pages
-              <input id="pages" type="text" required />
+              <input id="pages" type="number" required />
             </label>
           </li>
           <li>
@@ -57,7 +52,15 @@
           <li><input type="submit" class="submit" value="+"></li>
         </ul>
       </form>
+    </header>
+    <main>
+      <div class="add-box"><button class="add-button">+ Add book</button></div>
+      <div class="card-container">
+        </div>
+      </div>
+
+      
     </main>
-    <footer>Github Logo Downsider</footer>
+    <footer><a href="https://github.com/d0wnsider"><img src="./img/icons8-github.svg"></a></footer>
   </body>
 </html>

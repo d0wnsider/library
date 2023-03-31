@@ -1,6 +1,7 @@
 const form = document.querySelector('.form');
 const addButton = document.querySelector('.add-button');
 const submit = document.querySelector('.submit');
+const html = document.querySelector('html');
 
 const library = [];
 
@@ -32,12 +33,15 @@ function displayLibrary() {
 
     const title = document.createElement('p');
     title.textContent = `Title: ${book.title}`;
+    title.classList = 'bold';
 
     const author = document.createElement('p');
     author.textContent = `Author: ${book.author}`;
+    author.classList = 'bold';
 
     const pages = document.createElement('p');
     pages.textContent = `Pages: ${book.pages}`;
+    pages.classList = 'bold';
 
     const read = document.createElement('p');
     if (book.read === true) {
@@ -68,6 +72,8 @@ function displayLibrary() {
 
 addButton.addEventListener('click', (e) => {
   form.style.display = 'block';
+  html.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  form.style.transform = 'translate(0, 100px)';
 });
 
 submit.addEventListener('click', (e) => {
@@ -75,4 +81,5 @@ submit.addEventListener('click', (e) => {
   addBookToLibrary();
   displayLibrary();
   form.style.display = 'none';
+  html.style.backgroundColor = '';
 });
