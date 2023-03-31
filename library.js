@@ -15,7 +15,7 @@ function addBookToLibrary() {
   const userTitle = document.querySelector('#title').value;
   const userAuthor = document.querySelector('#author').value;
   const userPages = document.querySelector('#pages').value;
-  const userRead = document.querySelector('#read').value;
+  const userRead = document.querySelector('#read').checked;
 
   const book = new Book(userTitle, userAuthor, userPages, userRead);
   library.push(book);
@@ -40,7 +40,13 @@ function displayLibrary() {
     pages.textContent = `Pages: ${book.pages}`;
 
     const read = document.createElement('p');
-    read.textContent = `Read: ${book.read}`;
+    if (book.read === true) {
+      read.textContent = `Read`;
+      read.classList.add('green');
+    } else {
+      read.classList.add('red');
+      read.textContent = `Not Read`;
+    }
 
     const rem = document.createElement('button');
     rem.classList = 'remove-button';

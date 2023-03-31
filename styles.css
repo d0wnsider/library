@@ -49,6 +49,16 @@ form {
   display: flex;
   flex-direction: column;
 }
+.green {
+  padding: 20px;
+  background-color: rgba(0, 170, 0, 0.763);
+  color: white;
+}
+.red {
+  padding: 20px;
+  background-color: rgba(255, 0, 0, 0.659);
+  color: white;
+}
 /*  */
 footer {
   height: 10vh;
