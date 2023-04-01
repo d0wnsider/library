@@ -1,7 +1,7 @@
 const form = document.querySelector('.form');
 const addButton = document.querySelector('.add-button');
 const submit = document.querySelector('.submit');
-const html = document.querySelector('html');
+const body = document.querySelector('body');
 
 const library = [];
 
@@ -72,8 +72,8 @@ function displayLibrary() {
 
 addButton.addEventListener('click', (e) => {
   form.style.display = 'block';
-  html.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-  form.style.transform = 'translate(0, 100px)';
+  body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  form.style.transform = 'translate(0, 200px)';
 });
 
 submit.addEventListener('click', (e) => {
@@ -81,5 +81,5 @@ submit.addEventListener('click', (e) => {
   addBookToLibrary();
   displayLibrary();
   form.style.display = 'none';
-  html.style.backgroundColor = '';
+  body.style.backgroundColor = '';
 });

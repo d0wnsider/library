@@ -15,41 +15,28 @@
         <p class="bold">Add new book</p>
         <ul>
           <li>
-            <label for="title"
-              >Title
-              <input
-                id="title"
-                type="text"
-                value=""
-                required
-              />
-            </label>
+            <label for="title">Title</label>
+            <input id="title" type="text" required />
           </li>
           <li>
-            <label for="author"
-              >Author
-              <input id="author" type="text" required />
-            </label>
+            <label for="author">Author</label>
+            <input id="author" type="text" required />
           </li>
           <li>
-            <label for="pages"
-              >Pages
-              <input id="pages" type="number" required />
-            </label>
+            <label for="pages">Pages</label>
+            <input id="pages" type="number" required />
           </li>
-          <li>
-            <label for="read"
-              >Read
-              <input
-                id="read"
-                type="checkbox"
-                name="read"
-                value="No"
-                required
+          <li class="read">
+            <label for="read">Read</label>
+              <input id="read" type="checkbox" name="read" value="No" required
               />Yes
-            </label>
           </li>
-          <li><input type="submit" class="submit" value="+"></li>
+          <li class="submit-grp">
+            <button type="submit" class="submit">
+              <!-- Tried to use google drive for img online storage, instructions in notion -->
+              <img class="add-img" src="https://drive.google.com/uc?export=view&id=13u1oMdmjS_wbCh-Hwmh5TFxG83A4n55N">
+            </button>
+          </li>
         </ul>
       </form>
     </header>
@@ -58,8 +45,6 @@
       <div class="card-container">
         </div>
       </div>
-
-      
     </main>
     <footer><a href="https://github.com/d0wnsider"><img src="./img/icons8-github.svg"></a></footer>
   </body>

@@ -10,6 +10,9 @@ body {
 
 ul {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 p {
@@ -50,13 +53,35 @@ form {
   display: none;
   position: absolute;
   transform: translate(60vw, -1000px);
+  padding: 40px;
+}
+input {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.read {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.submit-grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .submit {
   padding: 20px;
   border: none;
+  background-color: transparent;
 }
 .submit:hover {
   background-color: rgba(0, 170, 0, 0.4);
+}
+.add-img {
+  width: 30px;
+  height: 30px;
 }
 .card-container {
   padding: 10px;
