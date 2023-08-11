@@ -78,7 +78,7 @@ addButton.addEventListener('click', (e) => {
   form.style.transform = 'translate(0, 200px)';
 });
 
-submit.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   addBookToLibrary();
   displayLibrary();

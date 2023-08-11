@@ -61,6 +61,11 @@ input {
   justify-content: center;
   align-items: center;
 }
+
+input:invalid {
+  outline: 2px solid red;
+}
+
 .read {
   display: flex;
   gap: 5px;
